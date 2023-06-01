@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+  <title>Javascript</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>ATIVIDADE 01</legend>
+        <label for="anos">Anos:</label><br>
+        <input type="number" id="anos" required><br><br>
+
+        <label for="meses">Meses:</label><br>
+        <input type="number" id="meses" required><br><br>
+
+        <label form="dias">Dias:</label><br>
+        <input type="number" id="dias" required><br><br>
+
+        <label for="resultado1">Resultado:</label><br>
+        <textarea name="resultado1" id="resultado1" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="calcularIdadeEmDias()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 02</legend>
+        <label for="notaUm">Nota 1:</label><br>
+        <input type="number" id="notaUm" required><br><br>
+
+        <label for="notaDois">Nota 2:</label><br>
+        <input type="number" id="notaDois" required><br><br>
+
+        <label form="notaTres">Nota 3:</label><br>
+        <input type="number" id="notaTres" required><br><br>
+
+        <label for="notaQuatro">Nota 4:</label><br>
+        <input type="number" id="notaQuatro" required><br><br>
+
+        <label for="resultado2">Resultado:</label><br>
+        <textarea name="resultado2" id="resultado2" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="calcularMediaNota()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 03</legend>
+        <label for="numero">Número:</label><br>
+        <input type="number" id="numero" required><br><br>
+
+        <label for="resultado3">Resultado:</label><br>
+        <textarea name="resultado3" id="resultado3" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="retornarParesImpares()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 04</legend>
+        <label for="usuario">Usuário:</label><br>
+        <input type="text" id="usuario" required><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" required><br><br>
+
+        <label for="resultado4">Resultado:</label><br>
+        <textarea name="resultado4" id="resultado4" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="confirmarSenha()">Entrar</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 05</legend>
+        <label for="novaSenha">Senha:</label><br>
+        <input type="text" id="novaSenha" required><br><br>
+
+        <label for="resultado5">Resultado:</label><br>
+        <textarea name="resultado5" id="resultado5" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="criarSenha()">Verificar</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 06</legend>
+        <label for="fahrenheit">Fahrenheit:</label><br>
+        <input type="number" id="fahrenheit" required><br><br>
+
+        <label for="resultado6">Celsius:</label><br>
+        <textarea name="resultado6" id="resultado6" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="fahrenheitCelsius()">Converter</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 07</legend>
+        <label for="a">A:</label><br>
+        <input type="number" id="a" required><br><br>
+
+        <label for="b">B:</label><br>
+        <input type="number" id="b" required><br><br>
+
+        <label for="c">C:</label><br>
+        <input type="number" id="c" required><br><br>
+
+        <label for="resultado7">Resultado:</label><br>
+        <textarea name="resultado7" id="resultado7" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="equacaoSegundoGrau()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 08</legend>
+        <label for="frase">Frase:</label><br>
+        <input type="text" id="frase" required><br><br>
+
+        <label for="resultado8">Resultado:</label><br>
+        <textarea name="resultado8" id="resultado8" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="frase()">Verificar</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 09</legend>
+        <label for="salario">Salário fixo:</label><br>
+        <input type="number" id="salario" required><br><br>
+
+        <label for="comissao">Percentual de comissão por carro:</label><br>
+        <input type="number" id="comissao" required><br><br>
+
+        <label for="quantidade">Quantidade de carros:</label><br>
+        <input type="number" id="quantidade" required><br><br>
+
+        <label for="valor">Valor dos carros:</label><br>
+        <input type="number" id="valor" required><br><br>
+
+        <label for="resultado9">Resultado:</label><br>
+        <textarea name="resultado9" id="resultado9" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="salarioVendedor()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 10</legend>
+        <label for="itens">Joio e trigo:</label><br>
+
+        <textarea name="resultado10" id="resultado10" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="joioEtrigo()">Separar</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>ATIVIDADE 11</legend>
+        <label for="capital">Capital inicial:</label><br>
+        <input type="number" id="capital" required><br><br>
+
+        <label for="juros">Taxa percentual de juros:</label><br>
+        <input type="number" id="juros" required><br><br>
+
+        <label for="tempo">Tempo de investimento em meses:</label><br>
+        <input type="number" id="tempo" required><br><br>
+
+        <label for="resultado11">Resultado:</label><br>
+        <textarea name="resultado11" id="resultado11" cols="30" rows="10" readonly></textarea>
+
+        <button onclick="retornoInvestimento()">Calcular</button>
+    </fieldset>
+
+    <br><br>
+
+<script src="javascript/main.js"></script>
+
+</body>
+</html>
