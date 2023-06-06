@@ -100,7 +100,7 @@ function retornarParesImpares() {
     }
   }
 
-  document.getElementById("resultado3").textContent = 'Ímpares: ' + impares + ' Pares: ' + pares;
+  document.getElementById("resultado3").textContent = 'Ímpares: ' + impares + '\nPares: ' + pares;
 
 }
 
@@ -182,19 +182,19 @@ function equacaoSegundoGrau() {
     const b = (document.getElementById("b"));
     const c = (document.getElementById("c"));
 
-    if(A.value == '') {
+    if(a.value == '') {
         alert("Insira dados na coluna 'A'")
-        A.focus()
+        a.focus()
         resultado7.innerHTML = ""
         return}
-    if(B.value == '') {
+    if(b.value == '') {
         alert("Insira dados na coluna 'B'")
-        B.focus()
+        b.focus()
         resultado7.innerHTML = ""
         return}
-    if(C.value == '') {
+    if(c.value == '') {
         alert("Insira dados na coluna 'C'")
-        C.focus()
+        c.focus()
         resultado7.innerHTML = ""
         return}
 
@@ -212,10 +212,11 @@ function equacaoSegundoGrau() {
 }
 
 function frase() {
-    
-    const frase = (document.getElementById("frase"));
-    let vogais = 0;
-    let espacos = 0;
+
+    let frase = document.getElementById('frase')
+    let vogal
+    let espacosEmBranco
+    let mensagem = resultado8
 
     if(frase.value == '') {
         alert("Insira dados na coluna 'Frase'")
@@ -223,44 +224,32 @@ function frase() {
         resultado8.innerHTML = ""
         return}
 
-    const letras = frase.value.length;
-
-    for (let i = 1; i <= letras; i++) {
-        if (frase.value.includes(' ')) {
-            espacos = espacos + 1;
-        }
-        
-        if (frase.value.includes('a')) {
-            vogais = vogais + 1;
-        }
-
-        if (frase.value.includes('e')) {
-            vogais = vogais + 1;
-        }
-
-        if (frase.value.includes('i')) {
-            vogais = vogais + 1;
-        }
-
-        if (frase.value.includes('o')) {
-            vogais = vogais + 1;
-        }
-
-        if (frase.value.includes('u')) {
-            vogais = vogais + 1;
-        }
+    if(frase.value.search(/['aeiou']/gi) > -1) {
+        vogal = frase.value.match(/['aeiou']/gi)
+        vogal = vogal.length
+        mensagem = `Vogais: ${vogal}`
+    } else if(frase.value.search(/['aeiou']/gi) == -1) {
+        mensagem = "Não há vogais nessa frase"
     }
 
-    document.getElementById("resultado8").textContent = 'Vogais: ' + vogais + ' Espaços: ' + espacos;
+    if(frase.value.search(/['\s']/gi) > -1) {
+        espacosEmBranco = frase.value.match(/['\s']/gi)
+        espacosEmBranco = espacosEmBranco.length
+        mensagem += `\nEspaços em branco: ${espacosEmBranco}`
+    } else if(frase.value.search(/['\s']/) == -1) {
+        mensagem += "\nNão há espaços em branco nessa frase"
+}
+
+    document.getElementById("resultado8").textContent = mensagem;
 
 }
 
 function salarioVendedor() {
     
-    const salario = (document.getElementById("salario"));
-    const comissao = (document.getElementById("comissao"));
-    const quantidade = (document.getElementById("quantidade"));
-    const valor = (document.getElementById("valor"));
+    const salario = document.getElementById("salario");
+    const comissao = document.getElementById("comissao");
+    const quantidade = document.getElementById("quantidade");
+    const valor = document.getElementById("valor");
 
     if(salario.value == '') {
         alert("Insira dados na coluna 'Salário'")
@@ -283,15 +272,15 @@ function salarioVendedor() {
         resultado9.innerHTML = ""
         return}
 
-    const comissao_calculada = (comissao.value * quantidade.value);
-    const comissao_separada = valor.value * quantidade.value;
+    const valor_vendas = valor.value * quantidade.value;
+    const comissao_calculada = valor_vendas * (comissao.value / 100);
 
-    if (comissao_separada > 100000) {
-        const comissao_extra = 0.75 * (comissao_separada - 100000);
-        const pagamento = salario.value + comissao_calculada + comissao_extra;
+    if (valor_vendas > 100000) {
+        const comissao_extra = valor_vendas * 0.75;
+        const pagamento = parseInt(salario.value) + comissao_calculada + comissao_extra;
         document.getElementById("resultado9").textContent = 'O salário final é de: ' + pagamento;
     } else {
-        const pagamento = salario.value + comissao_calculada;
+        const pagamento = parseInt(salario.value) + comissao_calculada;
         document.getElementById("resultado9").textContent = 'O salário final é de: ' + pagamento;
     }
 
@@ -300,15 +289,15 @@ function salarioVendedor() {
 function joioEtrigo(lista) {
     
     let itens = [
-        "joio", "trigo", "trigo", "joio", "trigo", "joio", "joio", "joio", "joio", "trigo", "trigo", "joio",
-        "joio", "joio", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo",
-        "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "joio", "joio", "joio", "joio",
-        "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo",
-        "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo",
-        "trigo", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo",
-        "trigo", "trigo", "trigo", "trigo", "trigo", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "joio", "joio", 
-        "joio", "joio", "joio", "trigo", "trigo", "trigo", "trigo", "joio", "joio", "joio", "joio", "joio", "joio", "joio", 
-        "trigo", "trigo", "trigo", "joio", "trigo", "joio", "joio", "joio"
+        "joio", "trigo", "trigo", "joio", "trigo", "joio", "joio", "joio", "joio", "trigo", "trigo", "joio", 
+        "joio", "joio", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "joio", "joio", 
+        "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", 
+        "joio", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", 
+        "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "joio", "joio", "joio", "joio", 
+        "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo", "trigo",
+        "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo", 
+        "trigo", "joio", "joio", "joio", "joio", "joio", "joio", "joio", "trigo", "trigo", "trigo", "joio", "trigo", "joio", "joio", 
+        "joio"
       ];
     
     let joio = [];
@@ -351,5 +340,4 @@ function retornoInvestimento(lista) {
     const valor = capital.value * Math.pow(1 + (juros.value / 100), tempo.value);
 
     document.getElementById("resultado11").textContent = 'O valor após ' + tempo.value + ' meses será de R$' + valor.toFixed(2);
-
 }
