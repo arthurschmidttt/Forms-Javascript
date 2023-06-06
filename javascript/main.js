@@ -85,19 +85,22 @@ function retornarParesImpares() {
   let impares, pares;
 
   for (let i = 1; i <= parseInt(numero.value); i++) {
-    if (i % 2 !== 0) {
-        if (impares === undefined) {
-            impares = i;
-        } else {
-            impares = impares + ', ' + i;
-        }
-    } else {
+    if (i % 2 === 0) {
         if (pares === undefined) {
             pares = i;
         } else {
             pares = pares + ', ' + i;
         }
+    } else {
+        if (impares === undefined) {
+            impares = i;
+        } else {
+            impares = impares + ', ' + i;
+        }
     }
+  }
+  if (pares === undefined) {
+      pares = 'Não existe valor par';
   }
 
   document.getElementById("resultado3").textContent = 'Ímpares: ' + impares + '\nPares: ' + pares;
@@ -206,7 +209,7 @@ function equacaoSegundoGrau() {
         const x1 = (-b.value + Math.sqrt(delta)) / (2 * a.value);
         const x2 = (-b.value - Math.sqrt(delta)) / (2 * a.value);
 
-        document.getElementById("resultado7").textContent = 'x1 = ' + x1 + ' x2 = ' + x2;
+        document.getElementById("resultado7").textContent = 'x1 = ' + x1 + '\nx2 = ' + x2;
     }
 
 }
@@ -276,7 +279,7 @@ function salarioVendedor() {
     const comissao_calculada = valor_vendas * (comissao.value / 100);
 
     if (valor_vendas > 100000) {
-        const comissao_extra = valor_vendas * 0.75;
+        const comissao_extra = (valor_vendas * 7.5) / 100;
         const pagamento = parseInt(salario.value) + comissao_calculada + comissao_extra;
         document.getElementById("resultado9").textContent = 'O salário final é de: ' + pagamento;
     } else {
